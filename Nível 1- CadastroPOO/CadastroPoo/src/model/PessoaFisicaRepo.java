@@ -1,19 +1,17 @@
 package model;
 import java.io.*;
 import java.util.ArrayList;
-public class PessoaFisicaRepo implements Serializable {
-    private ArrayList<PessoaFisica> pessoasFisicas;
-    
-     public PessoaFisicaRepo() {
-        pessoasFisicas = new ArrayList<>();
-    }
 
+public class PessoaFisicaRepo implements Serializable {
+    private ArrayList<PessoaFisica> pessoasFisicas;    
+    public PessoaFisicaRepo( ) {
+        pessoasFisicas = new ArrayList<>( );
+    }
     public void inserir(PessoaFisica pessoaFisica) {
         pessoasFisicas.add(pessoaFisica);
     }
-
     public void alterar (PessoaFisica pessoaFisica){
-    int index = obterIndicePessoaFisica(pessoaFisica.getId());
+    int index = obterIndicePessoaFisica(pessoaFisica.getId( ));
     if(index != -1) {
         pessoasFisicas.set(index, pessoaFisica);
         }   
@@ -26,18 +24,18 @@ public class PessoaFisicaRepo implements Serializable {
     }
     public PessoaFisica obter(int id) {
         for (PessoaFisica pessoaFisica : pessoasFisicas) {
-            if (pessoaFisica.getId() == id) {
+            if (pessoaFisica.getId( ) == id) {
                 return pessoaFisica;
             }
         }
         return null;
     }
-    public ArrayList<PessoaFisica> obterTodos() {
+    public ArrayList<PessoaFisica> obterTodos( ) {
         return pessoasFisicas;
     }
     private int obterIndicePessoaFisica(int id){
-        for (int i = 0; i < pessoasFisicas.size(); i++){
-            if (pessoasFisicas.get(i).getId() == id){
+        for (int i = 0; i < pessoasFisicas.size( ); i++){
+            if (pessoasFisicas.get(i).getId( ) == id){
                 return i;
             }
         }
@@ -50,7 +48,7 @@ public class PessoaFisicaRepo implements Serializable {
     }
     public void recuperar(String arquivo) throws IOException, ClassNotFoundException {
         try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(arquivo))) {
-            pessoasFisicas = (ArrayList<PessoaFisica>) inputStream.readObject();
+            pessoasFisicas = (ArrayList<PessoaFisica>) inputStream.readObject( );
         }
     }
 }

@@ -1,13 +1,12 @@
 package model;
 import java.io.*;
 import java.util.ArrayList;
+
 public class PessoaJuridicaRepo implements Serializable {
     private ArrayList<PessoaJuridica> pessoasJuridicas;
-
-    public PessoaJuridicaRepo() {
-        pessoasJuridicas = new ArrayList<>();
+    public PessoaJuridicaRepo( ) {
+        pessoasJuridicas = new ArrayList<>( );
     }
-
     public void inserir (PessoaJuridica pessoaJuridica){
         pessoasJuridicas.add(pessoaJuridica);
     }
@@ -23,9 +22,9 @@ public class PessoaJuridicaRepo implements Serializable {
             pessoasJuridicas.remove(index);
         }
     }
-      public PessoaJuridica obter(int id) {
+    public PessoaJuridica obter(int id) {
         for (PessoaJuridica pessoaJuridica : pessoasJuridicas) {
-            if (pessoaJuridica.getId() == id) {
+            if (pessoaJuridica.getId( ) == id) {
                 return pessoaJuridica;
             }
         }
@@ -35,8 +34,8 @@ public class PessoaJuridicaRepo implements Serializable {
         return pessoasJuridicas;
     }
     private int obterIndicePessoaJuridica(int id) {
-        for (int i = 0; i < pessoasJuridicas.size(); i++) {
-            if (pessoasJuridicas.get(i).getId() == id) {
+        for (int i = 0; i < pessoasJuridicas.size( ); i++) {
+            if (pessoasJuridicas.get(i).getId( ) == id) {
                 return i;
             }
         }
@@ -49,7 +48,7 @@ public class PessoaJuridicaRepo implements Serializable {
     }
     public void recuperar(String arquivo) throws IOException, ClassNotFoundException {
         try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(arquivo))) {
-            pessoasJuridicas = (ArrayList<PessoaJuridica>) inputStream.readObject();
+            pessoasJuridicas = (ArrayList<PessoaJuridica>) inputStream.readObject( );
         }
     }
 }
