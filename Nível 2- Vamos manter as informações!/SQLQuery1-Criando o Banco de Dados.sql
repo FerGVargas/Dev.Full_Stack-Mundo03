@@ -18,7 +18,7 @@ PRIMARY KEY(idPessoa)
 );
 
 CREATE TABLE Usuario (
-idUsuario INTEGER NOT NULL IDENTITY,
+idUsuario INTEGER NOT NULL,
 login VARCHAR(255) NOT NULL,
 senha VARCHAR(255) NOT NULL,
 PRIMARY KEY(idUsuario)
@@ -77,5 +77,6 @@ CREATE INDEX IFK_ItemMovimentado ON Movimento (Produto_idProduto);
 CREATE INDEX IFK_Cliente ON Movimento (Pessoa_idPessoa);
 
 CREATE INDEX IFK_Responsavel ON Movimento (Usuario_idUsuario);
+
 
 
