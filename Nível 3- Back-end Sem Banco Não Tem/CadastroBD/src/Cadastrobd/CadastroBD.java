@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package cadastrobd;
 
 import cadastrobd.model.PessoaFisica;
@@ -151,9 +147,9 @@ public class CadastroBD {
             
             pfDao.incluir(pf);
             
-            System.out.println("==========================================");
+            System.out.println("============================================");
             System.out.println("Dados de Pessoa Fisica incluido com sucesso!");
-            System.out.println("==========================================");
+            System.out.println("============================================");
         }
         if (opcaoPessoa == 'J' || opcaoPessoa == 'j') {
             PessoaJuridica pj = new PessoaJuridica();
@@ -193,9 +189,9 @@ public class CadastroBD {
             
             pjDao.incluir(pj);
             
-            System.out.println("==========================================");
+            System.out.println("==============================================");
             System.out.println("Dados de Pessoa Juridica incluido com sucesso!");
-            System.out.println("==========================================");
+            System.out.println("==============================================");
         }
     }
     
@@ -241,9 +237,9 @@ public class CadastroBD {
 
             pfDao.alterar(pf);
             
-            System.out.println("==========================================");
+            System.out.println("============================================");
             System.out.println("Dados de Pessoa Fisica alterado com sucesso!");
-            System.out.println("==========================================");
+            System.out.println("============================================");
         }
 
         if (opcaoPessoa == 'J' || opcaoPessoa == 'j') {
@@ -284,9 +280,9 @@ public class CadastroBD {
 
             pjDao.alterar(pj);
             
-            System.out.println("==========================================");
+            System.out.println("==============================================");
             System.out.println("Dados de Pessoa Juridica alterado com sucesso!");
-            System.out.println("==========================================");
+            System.out.println("==============================================");
         }
     }
 
@@ -300,9 +296,9 @@ public class CadastroBD {
             PessoaFisica pessoa = pfDao.getPessoa(id);
             pfDao.excluir(pessoa);
             
-            System.out.println("==========================================");
+            System.out.println("============================================");
             System.out.println("Dados de Pessoa Fisica excluido com sucesso!");
-            System.out.println("==========================================");
+            System.out.println("============================================");
         }
 
         if (opcaoPessoa == 'J' || opcaoPessoa == 'j') {
@@ -312,9 +308,9 @@ public class CadastroBD {
             PessoaJuridica pessoa = pjDao.getPessoa(id);
             pjDao.excluir(pessoa);
             
-            System.out.println("==========================================");
+            System.out.println("==============================================");
             System.out.println("Dados de Pessoa Juridica excluido com sucesso!");
-            System.out.println("==========================================");
+            System.out.println("==============================================");
         }
     }
 
@@ -327,9 +323,9 @@ public class CadastroBD {
             int id = sc.nextInt();
             sc.nextLine();
             PessoaFisica pf = pfDao.getPessoa(id);
-            System.out.println("==========================================");
+            System.out.println("==================================");
             System.out.println("Exibindo dados de Pessoa Fisica...");
-            System.out.println("==========================================");
+            System.out.println("==================================");
             
             System.out.println(pf.exibir());
         }
@@ -340,9 +336,9 @@ public class CadastroBD {
             sc.nextLine();
             PessoaJuridica pj = pjDao.getPessoa(id);
             
-            System.out.println("==========================================");
+            System.out.println("====================================");
             System.out.println("Exibindo dados de Pessoa Juridica...");
-            System.out.println("==========================================");
+            System.out.println("====================================");
             
             System.out.println(pj.exibir());
         }
@@ -354,9 +350,9 @@ public class CadastroBD {
         if (opcaoPessoa == 'F' || opcaoPessoa == 'f') {
             List<PessoaFisica> pfs = pfDao.getPessoas();
             
-            System.out.println("==========================================");
+            System.out.println("===============================================");
             System.out.println("Exibindo dados de todas as Pessoas Juridicas...");
-            System.out.println("==========================================");
+            System.out.println("===============================================");
             
             pfs.forEach(pf -> System.out.println(pf.exibir()));
         }
@@ -364,9 +360,9 @@ public class CadastroBD {
         if (opcaoPessoa == 'J' || opcaoPessoa == 'j') {
             List<PessoaJuridica> pjs = pjDao.getPessoas();
             
-            System.out.println("==========================================");
+            System.out.println("===============================================");
             System.out.println("Exibindo dados de todas as Pessoas Juridicas...");
-            System.out.println("==========================================");
+            System.out.println("===============================================");
             
             pjs.forEach(pj -> System.out.println(pj.exibir()));
         }

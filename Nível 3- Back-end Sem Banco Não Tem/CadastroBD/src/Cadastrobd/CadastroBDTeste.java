@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package cadastrobd;
 
 import cadastrobd.model.PessoaFisica;
@@ -12,10 +8,6 @@ import cadastrobd.model.util.ConectorBD;
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- *
- * @author Lorena Sanches
- */
 public class CadastroBDTeste {
 
     private final ConectorBD bd;

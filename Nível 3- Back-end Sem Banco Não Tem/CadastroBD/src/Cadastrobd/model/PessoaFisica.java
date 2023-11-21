@@ -1,43 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package cadastrobd.model;
 
-/**
- *
- * @author Lorena Sanches
- */
 public class PessoaFisica extends Pessoa {
     
-    private String cpf;
+    private String CPF;
     
-    public PessoaFisica(){
-        
+    public PessoaFisica(){  
     }
     
     public PessoaFisica(int id, String nome, String logradouro, String cidade, 
            String estado, String telefone, String email, String cpf){
         super(id, nome, logradouro, cidade, estado, telefone, email);
-        this.cpf = cpf;
+        this.CPF=CPF;
     }
 
-    /**
-     * @return the cpf
-     */
     public String getCpf() {
-        return cpf;
+        return CPF;
     }
 
-    /**
-     * @param cpf the cpf to set
-     */
     public void setCpf(String cpf) {
-        this.cpf = cpf;
+        this.CPF = cpf;
     }
     
     @Override
     public String exibir(){
-        return super.exibir()+ "\nCpf: " + getCpf();
+        return super.exibir()+ "\nCPF: " + getCpf();
     }
 }

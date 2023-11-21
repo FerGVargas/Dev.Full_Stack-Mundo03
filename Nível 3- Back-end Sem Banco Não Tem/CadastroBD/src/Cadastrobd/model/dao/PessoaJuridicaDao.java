@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package cadastrobd.model.dao;
 
 import cadastrobd.model.PessoaFisica;
@@ -14,10 +10,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Lorena Sanches
- */
 public class PessoaJuridicaDAO {
 
     private final ConectorBD bd;
