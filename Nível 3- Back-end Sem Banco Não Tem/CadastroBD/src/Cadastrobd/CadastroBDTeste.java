@@ -22,12 +22,12 @@ public class CadastroBDTeste {
 
     public void CriarPessoaFisica() throws SQLException, ClassNotFoundException {
         PessoaFisica pf = new PessoaFisica();
-        pf.setNome("Sirius");
-        pf.setLogradouro("Rua da Cerejeira, casa 3, Pão de Queijo");
-        pf.setCidade("Riacho do Noroeste");
-        pf.setEstado("MG");
-        pf.setTelefone("4444-4444");
-        pf.setEmail("sirius@riacho.com");
+        pf.setNome("Fernanda");
+        pf.setLogradouro("Rua Pavao, Moema");
+        pf.setCidade("São Paulo");
+        pf.setEstado("SP");
+        pf.setTelefone("02236-010");
+        pf.setEmail("fernanda@hotmail.com.br");
         pf.setCpf("00000000000");
 
         pfDao.incluir(pf);
@@ -35,8 +35,8 @@ public class CadastroBDTeste {
 
     public void AlterarPessoaFisica() throws SQLException, ClassNotFoundException {
         PessoaFisica pessoa = pfDao.getPessoa(2);
-        pessoa.setEmail("sirius@riachosul.com");
-        pessoa.setCpf("77777777777");
+        pessoa.setEmail("fernanda@hotmail.com.br");
+        pessoa.setCpf("12345678910");
         pfDao.alterar(pessoa);
     }
 
@@ -54,21 +54,21 @@ public class CadastroBDTeste {
 
     public void CriarPessoaJuridica() throws SQLException, ClassNotFoundException {
         PessoaJuridica pj = new PessoaJuridica();
-        pj.setNome("KQO");
-        pj.setLogradouro("Rua das Pitangas, n 60, Doce de Leite");
-        pj.setCidade("Riacho do Sudeste");
-        pj.setEstado("GO");
-        pj.setTelefone("5656-5656");
-        pj.setEmail("KQO@riacho.com");
-        pj.setCnpj("11111111111111");
+        pj.setNome("M&M Ltda");
+        pj.setLogradouro("Av. Bandeirantes, 1010, Jd. Aeroporto");
+        pj.setCidade("Centro");
+        pj.setEstado("SP");
+        pj.setTelefone("11 3901-5789");
+        pj.setEmail("comercial@memltda.com");
+        pj.setCnpj("12123456000101");
 
         pjDao.incluir(pj);
     }
 
     public void AlterarPessoaJuridica() throws SQLException, ClassNotFoundException {
         PessoaJuridica pessoa = pjDao.getPessoa(23);
-        pessoa.setEmail("empresa@teste.com");
-        pessoa.setCnpj("00000000000000");
+        pessoa.setEmail("comercial@memltda.com");
+        pessoa.setCnpj("12123456000101");
         pjDao.alterar(pessoa);
     }
 

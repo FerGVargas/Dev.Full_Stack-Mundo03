@@ -10,7 +10,7 @@ public class PessoaFisica extends Pessoa {
     public PessoaFisica(int id, String nome, String logradouro, String cidade, 
            String estado, String telefone, String email, String cpf){
         super(id, nome, logradouro, cidade, estado, telefone, email);
-        this.CPF=CPF;
+        this.CPF= CPF;
     }
 
     public String getCpf() {

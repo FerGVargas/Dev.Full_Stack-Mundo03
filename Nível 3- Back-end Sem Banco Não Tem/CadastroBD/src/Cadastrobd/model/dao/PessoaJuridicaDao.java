@@ -1,6 +1,5 @@
 package cadastrobd.model.dao;
 
-import cadastrobd.model.PessoaFisica;
 import cadastrobd.model.PessoaJuridica;
 import cadastrobd.model.util.ConectorBD;
 import cadastrobd.model.util.SequenceManager;
@@ -38,7 +37,7 @@ public class PessoaJuridicaDAO {
             pessoa.setEstado(rs.getString("estado"));
             pessoa.setTelefone(rs.getString("telefone"));
             pessoa.setEmail(rs.getString("email"));
-            pessoa.setCnpj(rs.getString("cnpj"));
+            pessoa.setCnpj(rs.getString("CNPJ"));
             bd.Close();
             return pessoa;
         }
@@ -62,7 +61,7 @@ public class PessoaJuridicaDAO {
             pessoa.setEstado(rs.getString("estado"));
             pessoa.setTelefone(rs.getString("telefone"));
             pessoa.setEmail(rs.getString("email"));
-            pessoa.setCnpj(rs.getString("cnpj"));
+            pessoa.setCnpj(rs.getString("CNPJ"));
 
             arraypj.add(pessoa);
         }
@@ -72,11 +71,12 @@ public class PessoaJuridicaDAO {
     }
 
     public void incluir(PessoaJuridica pj) throws SQLException, ClassNotFoundException {
-        String inserir = "insert into Pessoa (idPessoa, nome, logradouro, cidade, estado, telefone, email) values \n"
-                + "(?, ?, ?, ?, ?, ?, ?);\n"
-                + "\n"
-                + "insert into PessoaJuridica(Pessoa_idPessoa, cnpj) values \n"
-                + "(?, ?);";
+        String inserir = """
+                         insert into Pessoa (idPessoa, nome, logradouro, cidade, estado, telefone, email) values 
+                         (?, ?, ?, ?, ?, ?, ?);
+                         
+                         insert into PessoaJuridica(Pessoa_idPessoa, CNPJ) values 
+                         (?, ?);""";
 
         int id = sequence.getValue(bd);
 
@@ -98,17 +98,9 @@ public class PessoaJuridicaDAO {
     }
 
     public void alterar(PessoaJuridica pj) throws SQLException, ClassNotFoundException {
-        String alterar = "UPDATE Pessoa "
-                + "SET nome = ?,"
-                + "logradouro = ?,"
-                + "cidade= ?,"
-                + "estado = ?,"
-                + "telefone = ?,"
-                + "email = ? "
-                + "WHERE idPessoa = ?;\n"
-                + "UPDATE PessoaJuridica "
-                + "SET cnpj = ? "
-                + "WHERE Pessoa_idPessoa = ?";
+        String alterar = """
+                         UPDATE Pessoa SET nome = ?,logradouro = ?,cidade= ?,estado = ?,telefone = ?,email = ? WHERE idPessoa = ?;
+                         UPDATE PessoaJuridica SET CNPJ = ? WHERE Pessoa_idPessoa = ?""";
 
         PreparedStatement ps = bd.getPrepared(alterar);
         ps.setString(1, pj.getNome());
@@ -127,8 +119,9 @@ public class PessoaJuridicaDAO {
     }
 
     public void excluir(PessoaJuridica pj) throws SQLException, ClassNotFoundException {
-        String delete = "DELETE FROM PessoaJuridica WHERE Pessoa_idPessoa = ?;\n"
-                + "DELETE FROM Pessoa WHERE idPessoa = ?";
+        String delete = """
+                        DELETE FROM PessoaJuridica WHERE Pessoa_idPessoa = ?;
+                        DELETE FROM Pessoa WHERE idPessoa = ?""";
         PreparedStatement ps = bd.getPrepared(delete);
         ps.setInt(1, pj.getId());
         ps.setInt(2, pj.getId());

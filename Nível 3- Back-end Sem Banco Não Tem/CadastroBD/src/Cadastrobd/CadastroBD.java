@@ -141,7 +141,7 @@ public class CadastroBD {
             String email = sc.nextLine();
             pf.setEmail(email);
             
-            System.out.println("Cpf: ");
+            System.out.println("CPF: ");
             String cpf = sc.nextLine();
             pf.setCpf(cpf);
             
@@ -183,7 +183,7 @@ public class CadastroBD {
             String email = sc.nextLine();
             pj.setEmail(email);
             
-            System.out.println("Cnpj: ");
+            System.out.println("CNPJ: ");
             String cnpj = sc.nextLine();
             pj.setCnpj(cnpj);
             
@@ -200,11 +200,11 @@ public class CadastroBD {
 
         if (opcaoPessoa == 'F' || opcaoPessoa == 'f') {
 
-            System.out.println("Qual o ID do cadastro que deseja alterar: ");
+            System.out.println("Qual o Id do cadastro que deseja alterar: ");
             int id = sc.nextInt();
             sc.nextLine();
             PessoaFisica pf = pfDao.getPessoa(id);  
-            System.out.println("Exibindo dados do ID selecionado para alteracao: ");
+            System.out.println("Exibindo dados do Id selecionado para alteracao: ");
             System.out.println(pf.exibir());
 
             System.out.println("Nome: ");
@@ -243,11 +243,11 @@ public class CadastroBD {
         }
 
         if (opcaoPessoa == 'J' || opcaoPessoa == 'j') {
-            System.out.println("Qual o ID do cadastro que deseja alterar: ");
+            System.out.println("Qual o Id do cadastro que deseja alterar? ");
             int id = sc.nextInt();
             sc.nextLine();
             PessoaJuridica pj = pjDao.getPessoa(id);
-            System.out.println("Exibindo dados do ID selecionado para alteracao: ");  
+            System.out.println("Exibindo dados do Id selecionado para alteracao... ");  
             System.out.println(pj.exibir());
 
             System.out.println("Nome: ");
@@ -274,7 +274,7 @@ public class CadastroBD {
             String email = sc.nextLine();
             pj.setEmail(email);
 
-            System.out.println("Cnpj: ");
+            System.out.println("CNPJ: ");
             String cnpj = sc.nextLine();
             pj.setCnpj(cnpj);
 
@@ -290,7 +290,7 @@ public class CadastroBD {
         char opcaoPessoa = opcaoPessoa();
 
         if (opcaoPessoa == 'F' || opcaoPessoa == 'f') {
-            System.out.println("Qual o ID do cadastro que deseja excluir: ");
+            System.out.println("Qual o Id do cadastro que deseja excluir? ");
             int id = sc.nextInt();
             sc.nextLine();
             PessoaFisica pessoa = pfDao.getPessoa(id);
@@ -302,7 +302,7 @@ public class CadastroBD {
         }
 
         if (opcaoPessoa == 'J' || opcaoPessoa == 'j') {
-            System.out.println("Qual o ID do cadastro que deseja excluir: ");
+            System.out.println("Qual o Id do cadastro que deseja excluir: ");
             int id = sc.nextInt();
             sc.nextLine();
             PessoaJuridica pessoa = pjDao.getPessoa(id);
@@ -319,7 +319,7 @@ public class CadastroBD {
 
         if (opcaoPessoa == 'F' || opcaoPessoa == 'f') {
 
-            System.out.println("Qual o ID do cadastro que deseja obter: ");
+            System.out.println("Qual o Id do cadastro que deseja obter? ");
             int id = sc.nextInt();
             sc.nextLine();
             PessoaFisica pf = pfDao.getPessoa(id);
@@ -331,7 +331,7 @@ public class CadastroBD {
         }
         
         if (opcaoPessoa == 'J' || opcaoPessoa == 'j') {
-            System.out.println("Qual o ID do cadastro que deseja obter: ");
+            System.out.println("Qual o Id do cadastro que deseja obter? ");
             int id = sc.nextInt();
             sc.nextLine();
             PessoaJuridica pj = pjDao.getPessoa(id);

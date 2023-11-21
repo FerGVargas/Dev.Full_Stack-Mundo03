@@ -37,7 +37,7 @@ public class PessoaFisicaDAO {
             pessoa.setEstado(rs.getString("estado"));
             pessoa.setTelefone(rs.getString("telefone"));
             pessoa.setEmail(rs.getString("email"));
-            pessoa.setCpf(rs.getString("cpf"));
+            pessoa.setCpf(rs.getString("CPF"));
             bd.Close();
             return pessoa;
         }
@@ -61,7 +61,7 @@ public class PessoaFisicaDAO {
             pessoa.setEstado(rs.getString("estado"));
             pessoa.setTelefone(rs.getString("telefone"));
             pessoa.setEmail(rs.getString("email"));
-            pessoa.setCpf(rs.getString("cpf"));
+            pessoa.setCpf(rs.getString("CPF"));
 
             arraypf.add(pessoa);
         }
@@ -71,11 +71,12 @@ public class PessoaFisicaDAO {
     }
 
     public void incluir(PessoaFisica pf) throws SQLException, ClassNotFoundException {
-        String inserir = "insert into Pessoa (idPessoa, nome, logradouro, cidade, estado, telefone, email) values \n"
-                + "(?, ?, ?, ?, ?, ?, ?);\n"
-                + "\n"
-                + "insert into PessoaFisica(Pessoa_idPessoa, cpf) values \n"
-                + "(?, ?);";
+        String inserir = """
+                         insert into Pessoa (idPessoa, nome, logradouro, cidade, estado, telefone, email) values 
+                         (?, ?, ?, ?, ?, ?, ?);
+                         
+                         insert into PessoaFisica(Pessoa_idPessoa, CPF) values 
+                         (?, ?);""";
 
         int id = sequence.getValue(bd);
 
@@ -97,17 +98,9 @@ public class PessoaFisicaDAO {
     }
 
     public void alterar(PessoaFisica pf) throws SQLException, ClassNotFoundException {
-        String alterar = "UPDATE Pessoa"
-                + "SET nome = ?,"
-                + "logradouro = ?,"
-                + "cidade= ?,"
-                + "estado = ?,"
-                + "telefone = ?,"
-                + "email = ? "
-                + "WHERE idPessoa = ?;\n"
-                + "UPDATE PessoaFisica "
-                + "SET cpf = ? "
-                + "WHERE Pessoa_idPessoa = ?";
+        String alterar = """
+                         UPDATE PessoaSET nome = ?,logradouro = ?,cidade= ?,estado = ?,telefone = ?,email = ? WHERE idPessoa = ?;
+                         UPDATE PessoaFisica SET CPF = ? WHERE Pessoa_idPessoa = ?""";
 
         PreparedStatement ps = bd.getPrepared(alterar);
         ps.setString(1, pf.getNome());
@@ -126,8 +119,9 @@ public class PessoaFisicaDAO {
     }
 
     public void excluir(PessoaFisica pf) throws SQLException, ClassNotFoundException {
-        String delete = "DELETE FROM PessoaFisica WHERE Pessoa_idPessoa = ?;\n"
-                + "DELETE FROM Pessoa WHERE idPessoa = ?";
+        String delete = """
+                        DELETE FROM PessoaFisica WHERE Pessoa_idPessoa = ?;
+                        DELETE FROM Pessoa WHERE idPessoa = ?""";
         PreparedStatement ps = bd.getPrepared(delete);
         ps.setInt(1, pf.getId());
         ps.setInt(2, pf.getId());

@@ -14,7 +14,7 @@ public class ConectorBD {
 
     public Connection getConnection() throws ClassNotFoundException, SQLException {
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        String connectionUrl = "jdbc:sqlserver://localhost\\DESKTOP-8PQGG84:1433;databaseName=Loja;user=loja;password=loja;trustServerCertificate=true";
+        String connectionUrl = "jdbc:sqlserver://localhost\\DESKTOP-8PQGG84:1433;databaseName=SistemadaLoja;user=loja;password=loja;trustServerCertificate=true";
         if (conexao == null || conexao.isClosed()) {
             conexao = DriverManager.getConnection(connectionUrl);
         }
