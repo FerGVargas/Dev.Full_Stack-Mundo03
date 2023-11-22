@@ -1,0 +1,2 @@
+cadastrobd.model.PessoaJuridica
+PessoaFisica.java
