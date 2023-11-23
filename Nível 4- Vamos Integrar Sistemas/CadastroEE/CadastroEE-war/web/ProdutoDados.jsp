@@ -1,7 +1,7 @@
 <%-- 
     Document   : ProdutoDados
-    Created on : 23 de ago. de 2023, 21:14:01
-    Author     : Lorena Sanches
+    Created on : 21 de nov. de 2023, 21:14:01
+    Author     : Fernanda
 --%>
 
 <%@page import="cadastroee.model.Produto"%>

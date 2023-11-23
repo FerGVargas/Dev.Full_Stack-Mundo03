@@ -4,12 +4,16 @@
  */
 package cadastroee.servlets;
 
+import cadastroee.controller.ProdutoFacadeLocal;
+import cadastroee.model.Produto;
+import jakarta.ejb.EJB;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
 
 /**
  *
@@ -26,8 +30,10 @@ public class ServletProduto extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    @EJB ProdutoFacadeLocal facade;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+       
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
@@ -38,6 +44,11 @@ public class ServletProduto extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet ServletProduto at " + request.getContextPath() + "</h1>");
+            
+            out.println("<h2>Produtos</h2>");
+            for (Produto produto :  facade.findAll()) {
+                out.println("<p>" + produto.getNome() + "</p>");
+            }
             out.println("</body>");
             out.println("</html>");
         }

@@ -1,22 +1,26 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package cadastroee.model;
 
 import java.io.Serializable;
 import java.util.Collection;
-import jakarta.persistence.Basic;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlTransient;
+/*import jakarta.persistence.NamedQueries;
+import jakarta.xml.bind.annotation.XmlRootElement;*/
+import javax.persistence.Basic;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
-
+/**
+ *
+ * @author Fernanda
+ */
 @Entity
 @Table(name = "Pessoa")
 @XmlRootElement
@@ -136,7 +140,7 @@ public class Pessoa implements Serializable {
         this.email = email;
     }
 
-    @XmlTransient
+    /*@XmlTransient*/
     public Collection<PessoaJuridica> getPessoaJuridicaCollection() {
         return pessoaJuridicaCollection;
     }
@@ -145,7 +149,7 @@ public class Pessoa implements Serializable {
         this.pessoaJuridicaCollection = pessoaJuridicaCollection;
     }
 
-    @XmlTransient
+    /*@XmlTransient*/
     public Collection<PessoaFisica> getPessoaFisicaCollection() {
         return pessoaFisicaCollection;
     }
@@ -154,7 +158,7 @@ public class Pessoa implements Serializable {
         this.pessoaFisicaCollection = pessoaFisicaCollection;
     }
 
-    @XmlTransient
+    /*@XmlTransient*/
     public Collection<Movimento> getMovimentoCollection() {
         return movimentoCollection;
     }

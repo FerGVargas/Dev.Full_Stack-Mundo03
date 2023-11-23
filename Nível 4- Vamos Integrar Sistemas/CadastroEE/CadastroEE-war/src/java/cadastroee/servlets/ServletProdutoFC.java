@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Lorena Sanches
+ * @author Fernanda
  */
 public class ServletProdutoFC extends HttpServlet {
 

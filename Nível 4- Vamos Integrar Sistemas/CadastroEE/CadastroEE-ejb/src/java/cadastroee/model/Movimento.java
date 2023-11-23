@@ -1,23 +1,27 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package cadastroee.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import jakarta.persistence.Basic;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
-import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotNull;
-import jakarta.xml.bind.annotation.XmlRootElement;
+/*import jakarta.persistence.NamedQueries;*/
+/*import jakarta.xml.bind.annotation.XmlRootElement;*/
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
+import javax.validation.constraints.NotNull;
 
-
+/**
+ *
+ * @author Fernanda
+ */
 @Entity
 @Table(name = "Movimento")
 @XmlRootElement
@@ -31,7 +35,7 @@ public class Movimento implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    /*@GeneratedValue(strategy = GenerationType.IDENTITY)*/
     @Basic(optional = false)
     @Column(name = "idMovimento")
     private Integer idMovimento;

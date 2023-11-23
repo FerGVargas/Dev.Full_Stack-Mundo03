@@ -1,7 +1,7 @@
 <%-- 
     Document   : ProdutoLista
-    Created on : 23 de ago. de 2023, 20:05:27
-    Author     : Lorena Sanches
+    Created on : 21 de nov. de 2023, 19:05:27
+    Author     : Fernanda
 --%>
 
 <%@page import="cadastroee.model.Produto"%>
@@ -28,7 +28,7 @@
                     <th>Nome</th>
                     <th>Quantidade</th>
                     <th>Preço de Venda</th>
-                    <th>Opções</th>
+                    <th>Opcoes</th>
                 </tr>
             </thead>
             <tbody>
