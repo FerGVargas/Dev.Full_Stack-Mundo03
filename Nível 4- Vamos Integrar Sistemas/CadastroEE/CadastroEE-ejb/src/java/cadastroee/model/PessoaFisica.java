@@ -5,8 +5,8 @@
 package cadastroee.model;
 
 import java.io.Serializable;
-import jakarta.persistence.NamedQueries;
-import jakarta.xml.bind.annotation.XmlRootElement;
+/*import jakarta.persistence.NamedQueries;
+import jakarta.xml.bind.annotation.XmlRootElement;*/
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Id;

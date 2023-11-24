@@ -6,9 +6,9 @@ package cadastroee.model;
 
 import java.io.Serializable;
 import java.util.Collection;
-import jakarta.persistence.NamedQueries;
+/*import jakarta.persistence.NamedQueries;
 import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlTransient;
+import jakarta.xml.bind.annotation.XmlTransient;*/
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -35,7 +35,7 @@ public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    /*@GeneratedValue(strategy = GenerationType.IDENTITY)*/
     @Basic(optional = false)
     @Column(name = "idUsuario")
     private Integer idUsuario;
@@ -89,7 +89,7 @@ public class Usuario implements Serializable {
         this.senha = senha;
     }
 
-    @XmlTransient
+    /*@XmlTransient*/
     public Collection<Movimento> getMovimentoCollection() {
         return movimentoCollection;
     }

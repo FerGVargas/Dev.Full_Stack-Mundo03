@@ -6,9 +6,9 @@ package cadastroee.model;
 
 import java.io.Serializable;
 import java.util.Collection;
-import jakarta.persistence.NamedQueries;
+/*import jakarta.persistence.NamedQueries;
 import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlTransient;
+import jakarta.xml.bind.annotation.XmlTransient;*/
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -35,7 +35,7 @@ public class Produto implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    /*@GeneratedValue(strategy = GenerationType.IDENTITY)*/
     @Basic(optional = false)
     @Column(name = "idProduto")
     private Integer idProduto;
@@ -53,7 +53,7 @@ public class Produto implements Serializable {
     @NotNull
     @Column(name = "precoVenda")
     private float precoVenda;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "produtoidProduto")
+    /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "produtoidProduto")*/
     private Collection<Movimento> movimentoCollection;
     private Object CascadeType;
 
@@ -103,7 +103,7 @@ public class Produto implements Serializable {
         this.precoVenda = precoVenda;
     }
 
-    @XmlTransient
+    /*@XmlTransient*/
     public Collection<Movimento> getMovimentoCollection() {
         return movimentoCollection;
     }

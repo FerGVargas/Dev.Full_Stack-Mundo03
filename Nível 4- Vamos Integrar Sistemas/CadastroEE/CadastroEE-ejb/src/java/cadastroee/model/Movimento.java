@@ -6,12 +6,9 @@ package cadastroee.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-/*import jakarta.persistence.NamedQueries;*/
-/*import jakarta.xml.bind.annotation.XmlRootElement;*/
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
