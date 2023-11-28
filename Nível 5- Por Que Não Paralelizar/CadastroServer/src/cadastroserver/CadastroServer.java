@@ -23,11 +23,11 @@ public class CadastroServer {
      */
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         
-	EntityManagerFactory emf = Persistence.createEntityManagerFactory("testeServerAula2PU");	
+	EntityManagerFactory emf = Persistence.createEntityManagerFactory("CadastroServerPU");	
 	UsuariosJpaController ctrlUsu = new UsuariosJpaController(emf);	
 	
-	try (ServerSocket serverSocket = new ServerSocket(1234)) {
-            System.out.println("Servidor aguardando conexoes na porta 1234...");
+	try (ServerSocket serverSocket = new ServerSocket(4321)) {
+            System.out.println("Servidor aguardando conexoes na porta 4321...");
             while (true) {
                 Socket socket = serverSocket.accept();
             
